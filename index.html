@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        body {
+            margin : 0px;
+            padding : 0px;
+            background-color : #F2F1EF;
+            font-family: 'Open Sans', sans-serif;
+            color : #353b48;
+            font-size : 16px;
+        }
+        button {
+            font-family: 'Open Sans', sans-serif;
+            font-size : 15px;
+        }
+        #header {
+            width : 100%;
+            background-color: #2980b9;
+            height : 200px;
+            text-align: center;
+        }
+        #querybox {
+            width : 100%;
+            text-align: center;
+            margin : 40px 0px;
+        }
+        #logo {
+            height:200px;
+            width:200px;
+        }
+        #searchbox {
+            box-sizing: border-box;
+            margin: 20px 20px 20px 0px;
+            padding: 10px;
+            height : 50px;
+            width : 75%;
+            background-color: inherit;
+            font-size:16px;
+            border : 0px;
+            font-family: 'Open Sans', sans-serif;
+            border : solid #34495e 2px; 
+            outline : none;
+            
+        }
+        #searchbox:focus{
+            background-color:white;
+        }
+        #btnsearch {
+            box-sizing: border-box;
+            margin:10px 0px;
+            background-color:#3498db;
+            border : 0px; 
+            height : 55px;
+            font-family: 'Open Sans', sans-serif;
+            color : white;
+            width : 120px;
+            outline : none;
+        }
+        #btnsearch:hover{
+            background-color: #1e7ebf;
+        }
+        #resultbox {
+            font-family: 'Open Sans', sans-serif;
+            padding:30px auto;
+            margin : 10px 0px;
+            width : 100%;
+        }
+        .resultentry {
+            width:80%; 
+            background-color :#2980b9; 
+            color: white; 
+            padding: 30px; 
+            margin : 20px auto 0px auto; 
+            line-height:35px;
+            text-align:center;
+        }
+        .btnshowpaper {
+            box-sizing: border-box;
+            margin:10px auto 0px auto;
+            background-color:#9b59b6;
+            border : 0px; 
+            height : 40px;
+            font-family: 'Open Sans', sans-serif;
+            color : white;
+            width : 250px;
+            outline : none;
+        }
+        .btnshowpaper:hover{
+            background-color: #8e44ad;
+        }
+        .resultboxheading {
+            width : 80%; 
+            padding : 30px 0px 30px 0px; 
+            text-align:center;
+            color : #353b48;
+            font-weight : bold;
+            font-size: 25px;
+            margin : 20px auto 5px ;
+            border:0px;
+        }
+        #footer{
+            width:100%;
+            bottom:0px;
+            background-color: #34495e;
+            color : white;
+            text-align : center;
+            height : 30px;
+            line-height: 30px;
+            margin : 50px 0px 0px 0px;
+        } 
+         
+         @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            #header {
+                height:100px;
+            }
+            #logo {
+                height:100px;
+                width:100px;
+            }
+            #searchbox {
+                border: 1px solid;
+            }
+            body{
+                font-size:13px;
+            }
+            button {
+                font-size:13px;
+            }
+            .btnshowpaper {
+                height:30px;
+
+            }
+            .resultboxheading {
+                font-size:15px;
+                padding : 30px 0px 10px 0px; 
+                width:90%;
+            }
+            .resultentry {
+                width: 90%;
+                padding:10px 5px;
+            }
+            #searchbox {
+                font-size:13px;
+                width:90%;
+                margin:15px 5px;
+            }
+            #querybox {
+                margin:20px 0px;
+            }
+            #btnsearch {
+                height : 40px;
+            }
+            #footer {
+                font-size: 11px;
+            }
+            #showall {
+                font-size: 11px;
+            }
+        }
+    </style>
+                     <!--"<div class=\"resultentry\"><strong>" + data[i].name + "</strong><br/>" + data[i].fullcode + "<br/>" + "<button type=\"button\" class=\"btnshowpaper\" onclick=\"showpaper(" + String(i) + ")\">Show Question Paper</button><br/></div>";-->
+
+<style>
+.demo-card-event.mdl-card {
+  width: 256px;
+  height: 300px;
+  background: #3E4EB8;
+}
+.demo-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.demo-card-event > .mdl-card__title {
+  align-items: flex-start;
+}
+.demo-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.demo-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.demo-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.demo-card-event > .mdl-card__title,
+.demo-card-event > .mdl-card__actions,
+.demo-card-event > .mdl-card__actions > .mdl-button {
+  color: #fff;
+}
+</style>
+
+
+    <script>
+        var data = [
+            {
+                name : "Mathematics - II ( Probability and Statistics )",
+                code : "MA-201",
+                fullcode : "B.Tech/CSE/2nd-Sem-M/2018/MA-201",
+                time : "1 hour 30 min",
+                marks : "30",
+                imgs : ["btechcse2ndsemm2018ma201_0.jpg"],
+            },
+            
+            {
+                name : "Digital Electronics",
+                code : "EC-201",
+                fullcode : "B.Tech/CSE/2nd-Sem-M/2018/EC-201",
+                time : "1 hour 30 min",
+                marks : "25",
+                imgs : ["btechcse2ndsemm2018ec201_0.jpg"],
+            },
+            
+            {
+                name : "Data Structures and Algorithms",
+                code : "CS-201",
+                fullcode : "B.Tech/CSE/2nd-Sem-M/2018/CS-201",
+                time : "1 hour 30 min",
+                marks : "30",
+                imgs : [ "btechcse2ndsemm2018cs201_0.jpg"],
+            },
+            
+            {
+                name : "Computer Fundamentals and Programming With C",
+                code : "CS-201",
+                fullcode : "B.Tech/CSE/1st-Sem-M/2017/CS-101",
+                time : "1 hour 30 min",
+                marks : "30",
+                imgs : [ "btechcse1stsemm2017cs101_0.jpg",
+                        "btechcse1stsemm2017cs101_1.jpg"],
+            }
+        ];
+        
+        function showpaper(id) {
+            document.getElementsByName("urls")[0].value = String(data[id].imgs);
+            document.getElementById("frmpaper").submit();
+        }
+        
+        function dosearch(all) {
+            var resultbox = document.getElementById("resultbox");
+            var query = document.getElementById("searchbox").value;
+            var found = 0;
+            resultbox.innerHTML = "";
+            for (var i=data.length - 1;i>=0;i--) {
+                if ( data[i].name.toLowerCase().search(query.toLowerCase()) != -1 || all)
+                {
+                    found = 1;
+                        resultbox.innerHTML += "<div class=\"demo-card-event mdl-card mdl-shadow--2dp\">" +
+      "<div class=\"mdl-card__title mdl-card--expand\">" +
+        "<h4>" +
+          data[i].name + "<br>" +
+          data[i].fullcode + "<br>" +
+        "</h4>" +
+      "</div>" +
+       "<div class=\"mdl-card__actions mdl-card--border\">" +
+        "<a class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" onclick=\"showpaper(" + String(i) + ")\">Show Paper</a>" +
+        "<div class=\"mdl-layout-spacer\"></div>" +
+        "<i class=\"material-icons\">save_alt</i>" +
+      "</div>" +
+    "</div>";
+                }
+            }
+            if (!found)
+                resultbox.innerHTML = "<div class=\"resultboxheading\">Sorry, found no result for your query <strong>:|</strong></div>";
+            
+        }
+        
+        function populaterecent() {
+            var resultbox = document.getElementById("resultbox");
+            resultbox.innerHTML = "<div class=\"resultboxheading\">Recent Additions</div>";
+            for (var i=data.length - 1;i>=Math.max(data.length - 5,0);i--) {
+                    found = 1;
+
+    resultbox.innerHTML += "<div class=\"demo-card-event mdl-card mdl-shadow--2dp\">" +
+      "<div class=\"mdl-card__title mdl-card--expand\">" +
+        "<h4>" +
+          data[i].name + "<br>" +
+          data[i].fullcode + "<br>" +
+        "</h4>" +
+      "</div>" +
+       "<div class=\"mdl-card__actions mdl-card--border\">" +
+        "<a class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" onclick=\"showpaper(" + String(i) + ")\">Show Paper</a>" +
+        "<div class=\"mdl-layout-spacer\"></div>" +
+        "<i class=\"material-icons\">save_alt</i>" +
+      "</div>" +
+    "</div>";
+                }
+        }
+        
+        
+        window.onload = function () {
+            populaterecent();
+        }
+    </script>
+</head>
+<body>
+<form id="frmpaper" action="showpaper.html" method="get">
+    <input type="text" name="urls" style="display:none;"/>
+</form>
+<div id="header">
+    <a onclick="location.reload()" href="#"><img src="logo.png" id="logo" /></a>
+</div>
+<div id="querybox">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="searchbox" />
+    <label class="mdl-textfield__label" for="searchbox">Search a Question paper</label>
+    </div>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="btnsearch" onclick="dosearch(0)">Search</button>
+    <br/>
+    <a id="showall" href="#" onclick="dosearch(1)">View All Question Papers</a>
+</div>
+<div id="recentbox">
+</div>
+<div id="resultbox">
+</div>
+<div id="footer">
+    click here for the list of people who maintain this website.
+</div>
+</body>
+</html>
