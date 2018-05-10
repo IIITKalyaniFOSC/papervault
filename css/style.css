@@ -1,0 +1,157 @@
+body {
+        margin : 0px;
+        padding : 0px;
+        background-color : #F2F1EF;
+        font-family: 'Open Sans', sans-serif;
+        color : #353b48;
+        font-size : 16px;
+    }
+    button {
+        font-family: 'Open Sans', sans-serif;
+        font-size : 15px;
+    }
+    #header {
+        width : 100%;
+        background-color: #2980b9;
+        height : 200px;
+        text-align: center;
+    }
+    #querybox {
+        width : 100%;
+        text-align: center;
+        margin : 40px 0px;
+    }
+    #logo {
+        height:200px;
+        width:200px;
+    }
+    #searchbox {
+        box-sizing: border-box;
+        margin: 20px 20px 20px 0px;
+        padding: 10px;
+        height : 50px;
+        width : 75%;
+        background-color: inherit;
+        font-size:16px;
+        border : 0px;
+        font-family: 'Open Sans', sans-serif;
+        border : solid #34495e 2px;
+        outline : none;
+
+    }
+    #searchbox:focus{
+        background-color:white;
+    }
+    #btnsearch {
+        box-sizing: border-box;
+        margin:10px 0px;
+        background-color:#3498db;
+        border : 0px;
+        height : 55px;
+        font-family: 'Open Sans', sans-serif;
+        color : white;
+        width : 120px;
+        outline : none;
+    }
+    #btnsearch:hover{
+        background-color: #1e7ebf;
+    }
+    #resultbox {
+        font-family: 'Open Sans', sans-serif;
+        padding:30px auto;
+        margin : 10px 0px;
+        width : 100%;
+    }
+    .resultentry {
+        width:80%;
+        background-color :#2980b9;
+        color: white;
+        padding: 30px;
+        margin : 20px auto 0px auto;
+        line-height:35px;
+        text-align:center;
+    }
+    .btnshowpaper {
+        box-sizing: border-box;
+        margin:10px auto 0px auto;
+        background-color:#9b59b6;
+        border : 0px;
+        height : 40px;
+        font-family: 'Open Sans', sans-serif;
+        color : white;
+        width : 250px;
+        outline : none;
+    }
+    .btnshowpaper:hover{
+        background-color: #8e44ad;
+    }
+    .resultboxheading {
+        width : 80%;
+        padding : 30px 0px 30px 0px;
+        text-align:center;
+        color : #353b48;
+        font-weight : bold;
+        font-size: 25px;
+        margin : 20px auto 5px ;
+        border:0px;
+    }
+    #footer{
+        width:100%;
+        bottom:0px;
+        background-color: #34495e;
+        color : white;
+        text-align : center;
+        height : 30px;
+        line-height: 30px;
+        margin : 50px 0px 0px 0px;
+    }
+
+     @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        #header {
+            height:100px;
+        }
+        #logo {
+            height:100px;
+            width:100px;
+        }
+        #searchbox {
+            border: 1px solid;
+        }
+        body{
+            font-size:13px;
+        }
+        button {
+            font-size:13px;
+        }
+        .btnshowpaper {
+            height:30px;
+
+        }
+        .resultboxheading {
+            font-size:15px;
+            padding : 30px 0px 10px 0px;
+            width:90%;
+        }
+        .resultentry {
+            width: 90%;
+            padding:10px 5px;
+        }
+        #searchbox {
+            font-size:13px;
+            width:90%;
+            margin:15px 5px;
+        }
+        #querybox {
+            margin:20px 0px;
+        }
+        #btnsearch {
+            height : 40px;
+        }
+        #footer {
+            font-size: 11px;
+        }
+        #showall {
+            font-size: 11px;
+        }
+    }
