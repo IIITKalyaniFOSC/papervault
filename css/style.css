@@ -95,17 +95,49 @@ body {
         margin : 20px auto 5px ;
         border:0px;
     }
-    #footer{
-        width:100%;
-        bottom:0px;
-        background-color: #34495e;
-        color : white;
-        text-align : center;
-        height : 30px;
-        line-height: 30px;
-        margin : 50px 0px 0px 0px;
-    }
-
+	#contributers{
+          padding: 30px;
+          text-align: center;
+        }
+        #contributers>button{
+          padding: 0.5em;
+          border-radius: 4px;
+          background-color:#D84C4C;
+          color: white;
+        }
+        #contributers>button:hover{
+          background-color: #C90000;
+        }
+        #contributer-result{
+          width: 80%;
+          background: #2980b9;
+          color: white;
+          border: 1px solid black;
+          list-style: none;
+          margin: 10px auto;
+          padding: 10px 50px 10px 50px;
+          text-align: center;
+        }
+        #contributer-result li a{
+          text-decoration: none;
+          color: white;
+        }
+        .not-active{
+          display: none;
+        }
+        .active{
+          display: block;
+        }
+        .foot{
+          bottom: 0;
+          color: black;
+          border-top: 1px solid black;
+          text-align: center;
+        }
+        .foot>p{
+          padding: 10px;
+          display: inline-block;
+        }
      @media only screen and (max-width: 768px) {
         /* For mobile phones: */
         #header {

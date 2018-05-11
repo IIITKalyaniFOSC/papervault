@@ -68,7 +68,18 @@ function populaterecent() {
         }
 }
 
-
+//For contributer-result
+    var clickCount=0;
+    function showresult(){
+      if(clickCount==0){
+        clickCount = 1;
+        document.getElementById("contributer-result").className= "active";
+      }
+      else{
+        clickCount=0;
+        document.getElementById("contributer-result").className = "not-active";
+      }
+    }
 window.onload = function () {
     populaterecent();
 }
