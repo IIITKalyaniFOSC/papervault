@@ -1,5 +1,4 @@
 # Papervault
 Papervault is a archive of previous year question papers and accompanying website to simplify searching of the archive.
-This project is a work in progress and aims to produce a material design port of the original papervault by anubhavp28 and maybe it would be merged into the original one.
 
-Original papervault is hosted at https://iiitkalyanifosc.github.io/papervault/
+__Hosted at :__ https://iiitkalyanifosc.github.io/papervault/
