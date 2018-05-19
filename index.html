@@ -1,47 +1,231 @@
-<!doctype html>
 <html>
-<head>
-    <meta charset="utf-8"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' type='text/css' href="css/style.css">
-    <script src="js/script.js"></script>
-</head>
-<body>
-<form id="frmpaper" action="showpaper.html" method="get">
-    <input type="text" name="urls" style="display:none;"/>
-</form>
-<div id="header">
-    <a onclick="location.reload()" href="#"><img src="logo.png" id="logo" /></a>
-</div>
-<div id="querybox">
-    <input type="text" id="searchbox" placeholder="Type the name of the course here" />
-    <button type="button" id="btnsearch" onclick="dosearch(0)">Search</button>
-    <br/>
-    <a id="showall" href="#" onclick="dosearch(1)">View All Question Papers</a>
-</div>
-<div id="recentbox">
-</div>
-<div id="resultbox">
-</div>
+	<head>
+		<title>Papervault</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style_all.css">
+		
+		<script type="text/javascript" src="lib/jszip/jszip-utils.js"></script>
+		<script type="text/javascript" src="lib/jszip/jszip.min.js"></script>
+		<script type="text/javascript" src="lib/filesaver/FileSaver.min.js"></script>
+		<script type="text/javascript" src="lib/github-api/github.standalone.js"></script>
+		<script type="text/javascript" src="scripts/zipper.js"></script>
+		<script type="text/javascript" src="scripts/script_main.js"></script>
+		<script type="text/javascript" src="scripts/upload_paper.js"></script>
+	</head>
+	<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+		<!--MECHANISM TO DISPLAY-->
+		<form id="frmpaper" action="showpaper.html" method="get">
+   			 <input type="text" name="urls" style="display:none;"/>
+		</form>
+		<!--HEADER AND LAYOUT-->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  		<header class="mdl-layout__header">
+    		<div class="mdl-layout__header-row">
+      		<!-- Title -->
+      		<span class="mdl-layout-title">PaperVault</span>
+    		</div>
+    		<!-- Tabs -->
+    		<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      		<a href="#scroll-tab-1" class="mdl-layout__tab is-active">Home</a>
+      		<a href="#scroll-tab-2" class="mdl-layout__tab">Advanced</a>
+      		<a href="#scroll-tab-3" class="mdl-layout__tab">Download Queue</a>
+      		<a href="#scroll-tab-4" class="mdl-layout__tab">Upload a paper</a>
+      		<a href="#scroll-tab-5" class="mdl-layout__tab">About Papervault</a>
+    		</div>
+  		</header>		
+  		<div class="mdl-layout__drawer">
+    		<span class="mdl-layout-title">PaperVault</span>
+    		<nav class="mdl-navigation">
+      		<a class="mdl-navigation__link" href="">Link</a>
+      		<a class="mdl-navigation__link" href="">Link</a>
+      		<a class="mdl-navigation__link" href="">Link</a>
+      		<a class="mdl-navigation__link" href="">Link</a>
+    		</nav>
+  		</div>
+  		<main class="mdl-layout__content">
+  			<section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+    		<div class="page-content">
+    		
+    		
+    		    <!--MAIN CONTENT TAB 1-->
+    		    
+				<div class="mdl-grid">
+  			    <button type="button" class="mdl-chip mdl-color--blue mdl-color-text--white mdl-cell mdl-cell--2-col">
+    				<span class="mdl-chip__text">1st Year</span>
+				</button>
+  				<button type="button" class="mdl-chip mdl-color--deep-purple-600 mdl-color-text--white mdl-cell mdl-cell--2-col">
+    				<span class="mdl-chip__text">2nd Year</span>
+				</button>
+				<button type="button" class="mdl-chip mdl-color--deep-orange-A400 mdl-color-text--white mdl-cell mdl-cell--2-col">
+    				<span class="mdl-chip__text">3rd Year</span>
+				</button>
+				<button type="button" class="mdl-chip mdl-color--green-600 mdl-color-text--white mdl-cell mdl-cell--2-col">
+    				<span class="mdl-chip__text">4th Year</span>
+				</button>
+				<button type="button" class="mdl-chip mdl-color--amber-600 mdl-color-text--white mdl-cell mdl-cell--2-col mdl-cell--hide-tablet">
+    				<span class="mdl-chip__text">Mid Semester</span>
+				</button>
+				<button type="button" class="mdl-chip mdl-color--blue-grey-600 mdl-color-text--white mdl-cell mdl-cell--2-col mdl-cell--hide-tablet">
+    				<span class="mdl-chip__text">End Semester</span>
+				</button>
+				</div>
+				<div class="mdl-grid">
+  				<div id="resultbox" class="mdl-cell mdl-cell--8-col mdl-cell--order-2-phone mdl-cell--5-col-tablet mdl-card mdl-shadow--2dp"></div>
+  				<div class="mdl-cell mdl-cell--order-1-phone mdl-cell--4-col mdl-cell--3-col-tablet mdl-card mdl-shadow--2dp">
+  					<div class="mdl-card__title">
+    					<h2 class="mdl-card__title-text">Quick Search</h2>
+  					</div>
+  					<div class="mdl-card__supporting-text" align="center">					  
+					<form action="#">
+  					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    					<input class="mdl-textfield__input" type="text" id="searchbox">
+    					<label class="mdl-textfield__label" for="searchbox">Paper name</label>
+    				</form>	
+    				</div>
+    				</div>
+    				<div class="mdl-card__actions">
+    					<div class="mdl-grid">	
+    					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color--blue mdl-cell mdl-cell--12-col" id="btnsearch" onclick="dosearch(0)">Search this paper</button>
+    					</div>
+  					</div>
+  				</div>
+				</div>
+				
+				<!--FOOTER-->
+				
+				<footer class="mdl-mega-footer">
+  				<div class="mdl-mega-footer__middle-section">
 
-<div id="contributers">
-    <button type="button" name="button" onclick="showresult()">click here for the list of people who maintain this website.</button>
-</div>
-<div id="contributer-result" class="not-active">
-  <ul style="list-style: none;">
-    <li><a href="https://github.com/anubhavp28" target="_blank">Anubhav Patel</i></a></li>
-    <li><a href="https://github.com/zeus0789" target="_blank">Abhishek Tiwari</i></a></li>
-  </ul>
-</div>
+    				<div class="mdl-mega-footer__drop-down-section">
+      				<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      				<h1 class="mdl-mega-footer__heading">Features</h1>
+      				<ul class="mdl-mega-footer__link-list">
+        				<li><a href="#">About</a></li>
+        				<li><a href="#">Terms</a></li>
+        				<li><a href="#">Partners</a></li>
+        				<li><a href="#">Updates</a></li>
+      				</ul>
+    				</div>
 
-<div class="foot">
-    <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-github fa-2x"></i></a></p>
-    <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-facebook fa-2x"></i></a></p>
-    <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-slack fa-2x"></i></a></p>
-    <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-medium fa-2x"></i></a></p>
-    <p style="display: block; padding:0;">&copy; by IIITKalyaniFOSC. </p>
-</div>
-</body>
+    				<div class="mdl-mega-footer__drop-down-section">
+      				<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      				<h1 class="mdl-mega-footer__heading">Details</h1>
+      				<ul class="mdl-mega-footer__link-list">
+        				<li><a href="#">Specs</a></li>
+        				<li><a href="#">Tools</a></li>
+        				<li><a href="#">Resources</a></li>
+      				</ul>
+    				</div>
+
+    				<div class="mdl-mega-footer__drop-down-section">
+      				<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      				<h1 class="mdl-mega-footer__heading">Technology</h1>
+      				<ul class="mdl-mega-footer__link-list">
+        				<li><a href="#">How it works</a></li>
+        				<li><a href="#">Patterns</a></li>
+        				<li><a href="#">Usage</a></li>
+        				<li><a href="#">Products</a></li>
+        				<li><a href="#">Contracts</a></li>
+      				</ul>
+    				</div>
+
+    				<div class="mdl-mega-footer__drop-down-section">
+      				<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      				<h1 class="mdl-mega-footer__heading">FAQ</h1>
+      				<ul class="mdl-mega-footer__link-list">
+        				<li><a href="#">Questions</a></li>
+        				<li><a href="#">Answers</a></li>
+        				<li><a href="#">Contact us</a></li>
+      				</ul>
+    				</div>
+
+  				</div>
+
+  				<div class="mdl-mega-footer__bottom-section">
+    				<div class="mdl-logo">Title</div>
+    				<ul class="mdl-mega-footer__link-list">
+      				<li><a href="#">Help</a></li>
+      				<li><a href="#">Privacy & Terms</a></li>
+    				</ul>
+  				</div>
+
+				</footer>				    		
+    		</div>
+    		</section>
+			<section class="mdl-layout__tab-panel" id="scroll-tab-2">
+      		<div class="page-content"><!-- Your content goes here --></div>
+    		</section>
+    		<section class="mdl-layout__tab-panel" id="scroll-tab-3">
+      		<div class="page-content">
+      		
+      		
+      		
+      		<!--DOWNLOAD QUEUE-->
+            <section class="section--center mdl-grid">
+            <div class="mdl-card  mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__title">
+    					<h2 class="mdl-card__title-text">Your download queue</h2>
+            </div>
+            <div class="mdl-card__supporting-text"  id="downqueue">
+            </div>
+            <div class="mdl-card__actions"><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="populatezip()">ZIP and download</a></div>
+            </div>
+            </section>      		
+      		
+      		
+      		
+      		      		
+      		
+      		
+      		
+      		</div>
+    		</section>
+    		<section class="mdl-layout__tab-panel" id="scroll-tab-4">
+      		<div class="page-content">
+      		
+      		
+      		<!-- Your content goes here -->
+      		<form action="#" method="POST" id="uploadpaper">
+         		<label for="file">Select a file:</label>
+         		<input name="file" id="file" type="file" multiple />
+         		<br>
+         		<label for="gituser">GitHub User ID:</label>
+         		<input id="gituser" name="commit-title" type="text" />
+         		<br>
+         		<label for="gitpassword">GitHub Password:</label>
+         		<input id="gitpassword" name="commit-title" type="password" />
+         		<br>
+         		<label for="commit-title">Paper name:</label>
+         		<input id="newpapername" name="newpapername" type="text" />
+         		<br>
+         		<label for="commit-title">Paper Code:</label>
+         		<input id="newpapercode" name="newpapercode" type="text" />
+         		<br>
+         		<label for="commit-title">Paper fullcode (Like:2018ma201midsem):</label>
+         		<input id="newpaperfullcode" name="newpaperfullcode" type="text" />
+         		<br>
+         		<label for="commit-title">Semester (An integer from 1 to 8):</label>
+         		<input id="newpapersem" name="semester" type="text" />
+         		<br>
+         		<label for="commit-title">Marks:</label>
+         		<input id="newpapermarks" name="newpapermarks" type="text" />
+         		<br>
+         		<label for="commit-title">Time:</label>
+         		<input id="newpapertime" name="newpapertime" type="text" />
+         		<br>
+         		<input type="button" onclick="submitUploadForm()" name="Upload" />
+      		</form>
+      		
+      		</div>
+    		</section>
+    		<section class="mdl-layout__tab-panel" id="scroll-tab-5">
+      		<div class="page-content"><!-- Your content goes here --></div>
+    		</section>   			
+  		</main>
+		</div>
+				
+	</body>
 </html>
