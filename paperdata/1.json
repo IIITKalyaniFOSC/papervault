@@ -1,0 +1,38 @@
+{ "data" : [ {
+                "name" : "Mathematics - II ( Probability and Statistics )",
+                "code" : "MA-201",
+                "fullcode" : "B.Tech/CSE/2nd-Sem-M/2018/MA-201",
+                "time" : "1 hour 30 min",
+                "marks" : "30",
+                "imgs" : ["btechcse2ndsemm2018ma201_0.jpg"]
+          },
+            
+            {
+                "name" : "Digital Electronics",
+                "code" : "EC-201",
+                "fullcode" : "B.Tech/CSE/2nd-Sem-M/2018/EC-201",
+                "time" : "1 hour 30 min",
+                "marks" : "25",
+                "imgs" : ["btechcse2ndsemm2018ec201_0.jpg"]
+            },
+            
+            {
+                "name" : "Data Structures and Algorithms",
+                "code" : "CS-201",
+                "fullcode" : "B.Tech/CSE/2nd-Sem-M/2018/CS-201",
+                "time" : "1 hour 30 min",
+                "marks" : "30",
+                "imgs" : [ "btechcse2ndsemm2018cs201_0.jpg"]
+            },
+            
+            {
+                "name" : "Computer Fundamentals and Programming With C",
+                "code" : "CS-201",
+                "fullcode" : "B.Tech/CSE/1st-Sem-M/2017/CS-101",
+                "time" : "1 hour 30 min",
+                "marks" : "30",
+                "imgs" : [ "btechcse1stsemm2017cs101_0.jpg",
+                        "btechcse1stsemm2017cs101_1.jpg"]
+            }
+          ]  
+}            
