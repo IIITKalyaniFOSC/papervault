@@ -1,43 +1,6 @@
-var data = [
-            {
-                name : "Mathematics - II ( Probability and Statistics )",
-                code : "MA-201",
-                fullcode : "B.Tech/CSE/2nd-Sem-M/2018/MA-201",
-                time : "1 hour 30 min",
-                marks : "30",
-                imgs : ["btechcse2ndsemm2018ma201_0.jpg"],
-            },
-            
-            {
-                name : "Digital Electronics",
-                code : "EC-201",
-                fullcode : "B.Tech/CSE/2nd-Sem-M/2018/EC-201",
-                time : "1 hour 30 min",
-                marks : "25",
-                imgs : ["btechcse2ndsemm2018ec201_0.jpg"],
-            },
-            
-            {
-                name : "Data Structures and Algorithms",
-                code : "CS-201",
-                fullcode : "B.Tech/CSE/2nd-Sem-M/2018/CS-201",
-                time : "1 hour 30 min",
-                marks : "30",
-                imgs : [ "btechcse2ndsemm2018cs201_0.jpg"],
-            },
-            
-            {
-                name : "Computer Fundamentals and Programming With C",
-                code : "CS-201",
-                fullcode : "B.Tech/CSE/1st-Sem-M/2017/CS-101",
-                time : "1 hour 30 min",
-                marks : "30",
-                imgs : [ "btechcse1stsemm2017cs101_0.jpg",
-                        "btechcse1stsemm2017cs101_1.jpg"],
-            }
-        ];
-        
-var queue = [];        
+var data = [];
+var queue = [];
+var JSON_stack = [];        
         
 function showpaper(id) {
     document.getElementsByName("urls")[0].value = String(data[id].imgs);
@@ -99,7 +62,40 @@ function populatequeue(n) {
 		
 	}		          
 }        
- 
+
+function catchJSON(i,callback) {   
+   var jsonfullpath ="paperdata/"+ i + ".json";
+   var xobj = new XMLHttpRequest();
+   var check = 0;
+   xobj.overrideMimeType("application/json");
+   xobj.open('GET', jsonfullpath, true); // Replace 'my_data' with the path to your file
+   xobj.onreadystatechange = function () {
+         if (xobj.readyState == 4 && xobj.status == "200") {
+           // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+           callback(xobj.responseText);
+         }
+   };
+   xobj.send(null);
+} 
+
+function loadJSON(i){
+	return new Promise(function(resolve,reject){
+		catchJSON(i,function(called){
+			var temp = JSON.parse(called);
+			var check =0;
+			JSON_stack.push(temp);
+			check = 1;
+			if (check == 1){
+				resolve(i);
+			}
+			else {
+				reject("Error handling JSON data " + i + ".json");
+			}
+		});
+	});
+
+
+}
  
 function populatezip() {
 		for (var k=queue.length - 1;k>=0;k--)
@@ -112,9 +108,25 @@ function populatezip() {
 
 } 
  
- 
+function populatedata() {
+var seeder = [1,2,3,4,5,6,7,8];
+var JSONpromises = seeder.map(loadJSON);
+Promise.all(JSONpromises).then(function(){
+for(var i=0; i<= JSON_stack.length -1; i++)
+	{
+	 for (var j=0; j<= JSON_stack[i].data.length -1; j++)
+	 	{
+	 	 data.push(JSON_stack[i].data[j]);
+	 	}
+	}
+JSON_stack=[];
+populaterecent();	
+});	
+		
+} 
         
 window.onload = function () {
-            populaterecent();
+			populatedata();
+			
         }    
        

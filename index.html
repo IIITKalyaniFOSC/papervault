@@ -7,11 +7,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style_all.css">
 		
-		<script type="text/javascript" src="scripts/jszip-utils.js"></script>
-		<script type="text/javascript" src="scripts/jszip.min.js"></script>
-		<script type="text/javascript" src="scripts/FileSaver.min.js"></script>
+		<script type="text/javascript" src="lib/jszip/jszip-utils.js"></script>
+		<script type="text/javascript" src="lib/jszip/jszip.min.js"></script>
+		<script type="text/javascript" src="lib/filesaver/FileSaver.min.js"></script>
+		<script type="text/javascript" src="lib/github-api/github.standalone.js"></script>
 		<script type="text/javascript" src="scripts/zipper.js"></script>
 		<script type="text/javascript" src="scripts/script_main.js"></script>
+		<script type="text/javascript" src="scripts/upload_paper.js"></script>
 	</head>
 	<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
 		<!--MECHANISM TO DISPLAY-->
@@ -182,7 +184,42 @@
       		</div>
     		</section>
     		<section class="mdl-layout__tab-panel" id="scroll-tab-4">
-      		<div class="page-content"><!-- Your content goes here --></div>
+      		<div class="page-content">
+      		
+      		
+      		<!-- Your content goes here -->
+      		<form action="#" method="POST" id="uploadpaper">
+         		<label for="file">Select a file:</label>
+         		<input name="file" id="file" type="file" multiple />
+         		<br>
+         		<label for="gituser">GitHub User ID:</label>
+         		<input id="gituser" name="commit-title" type="text" />
+         		<br>
+         		<label for="gitpassword">GitHub Password:</label>
+         		<input id="gitpassword" name="commit-title" type="password" />
+         		<br>
+         		<label for="commit-title">Paper name:</label>
+         		<input id="newpapername" name="newpapername" type="text" />
+         		<br>
+         		<label for="commit-title">Paper Code:</label>
+         		<input id="newpapercode" name="newpapercode" type="text" />
+         		<br>
+         		<label for="commit-title">Paper fullcode (Like:2018ma201midsem):</label>
+         		<input id="newpaperfullcode" name="newpaperfullcode" type="text" />
+         		<br>
+         		<label for="commit-title">Semester (An integer from 1 to 8):</label>
+         		<input id="newpapersem" name="semester" type="text" />
+         		<br>
+         		<label for="commit-title">Marks:</label>
+         		<input id="newpapermarks" name="newpapermarks" type="text" />
+         		<br>
+         		<label for="commit-title">Time:</label>
+         		<input id="newpapertime" name="newpapertime" type="text" />
+         		<br>
+         		<input type="button" onclick="submitUploadForm()" name="Upload" />
+      		</form>
+      		
+      		</div>
     		</section>
     		<section class="mdl-layout__tab-panel" id="scroll-tab-5">
       		<div class="page-content"><!-- Your content goes here --></div>
