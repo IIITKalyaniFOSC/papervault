@@ -42,13 +42,41 @@ function showpaper(id) {
     document.getElementById("frmpaper").submit();
 }
 
+function matchSubs(data, query){
+    var flagFound = 0;
+    var matches = -1;
+
+    var keywords = query.split(" ");
+    for (var i=keywords.length - 1; i>=0; i--){
+        
+        // skip matching articles
+        if(keywords[i].length <= 3) continue;
+
+        if(data.includes(keywords[i])){
+            matches += 1;
+        }
+
+        // match plurals
+        if(data.includes(keywords[i].substring(0, keywords[i].length - 1))){
+            matches += 1;
+        }
+
+        // Fall back
+        if ( data.search(keywords[i].toLowerCase()) != -1 )    {
+                matches += 1;
+            }
+
+    }
+    return matches
+}
+
 function dosearch(all) {
     var resultbox = document.getElementById("resultbox");
     var query = document.getElementById("searchbox").value;
     var found = 0;
     resultbox.innerHTML = "";
     for (var i=data.length - 1;i>=0;i--) {
-        if ( data[i].name.toLowerCase().search(query.toLowerCase()) != -1 || all)
+        if ( matchSubs(data[i].name.toLowerCase(), query) != -1 || all)
         {
             found = 1;
             resultbox.innerHTML += "<div class=\"resultentry\"><strong>" + data[i].name + "</strong><br/>" + data[i].fullcode + "<br/>" + "<button type=\"button\" class=\"btnshowpaper\" onclick=\"showpaper(" + String(i) + ")\">Show Question Paper</button><br/></div>";
