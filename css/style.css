@@ -13,9 +13,9 @@ body {
     #header {
         width : 100%;
         background-color: #2980b9;
-        height : 200px;
+        height : 220px;
         text-align: center;
-    }
+    }   
     #querybox {
         width : 100%;
         text-align: center;
@@ -24,6 +24,11 @@ body {
     #logo {
         height:200px;
         width:200px;
+}
+    #logo:hover{
+           transform: scale(1.15);
+        transition: transform 0.3s;
+        
     }
     #searchbox {
         box-sizing: border-box;
@@ -49,12 +54,17 @@ body {
         border : 0px;
         height : 55px;
         font-family: 'Open Sans', sans-serif;
-        color : white;
+        color :black;
         width : 120px;
         outline : none;
+        border-radius: 10px;
+        font-weight: 600;
     }
+
     #btnsearch:hover{
-        background-color: #1e7ebf;
+        background-color: #155683;
+        color: white;
+        cursor:grab;
     }
     #resultbox {
         font-family: 'Open Sans', sans-serif;
@@ -83,7 +93,9 @@ body {
         outline : none;
     }
     .btnshowpaper:hover{
-        background-color: #8e44ad;
+        background-color: #155683;
+        color: white;
+        cursor:grab;
     }
     .resultboxheading {
         width : 80%;
