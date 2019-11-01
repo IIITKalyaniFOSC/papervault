@@ -16,31 +16,9 @@ body {
         height : 200px;
         text-align: center;
     }
-    #querybox {
-        width : 100%;
-        text-align: center;
-        margin : 40px 0px;
-    }
     #logo {
         height:200px;
         width:200px;
-    }
-    #searchbox {
-        box-sizing: border-box;
-        margin: 20px 20px 20px 0px;
-        padding: 10px;
-        height : 50px;
-        width : 75%;
-        background-color: inherit;
-        font-size:16px;
-        border : 0px;
-        font-family: 'Open Sans', sans-serif;
-        border : solid #34495e 2px;
-        outline : none;
-
-    }
-    #searchbox:focus{
-        background-color:white;
     }
     #btnsearch {
         box-sizing: border-box;
@@ -168,17 +146,6 @@ body {
         .resultentry {
             width: 90%;
             padding:10px 5px;
-        }
-        #searchbox {
-            font-size:13px;
-            width:90%;
-            margin:15px 5px;
-        }
-        #querybox {
-            margin:20px 0px;
-        }
-        #btnsearch {
-            height : 40px;
         }
         #footer {
             font-size: 11px;
