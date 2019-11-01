@@ -21,8 +21,9 @@
             }
         }
         var urls = $_GET['urls'].split(",");
+        var dir =  $_GET['dir'];
         for (var i=0;i<urls.length;i++) {
-            document.body.innerHTML += "<img src=\".\\papers\\" + urls[i] + "\" width=\"100%\" />";
+            document.body.innerHTML += "<img src=\".\\papers\\"+ dir + "\\" + urls[i] + "\" width=\"100%\" />";
         }
     }
     </script>

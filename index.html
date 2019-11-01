@@ -2,46 +2,163 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' type='text/css' href="css/style.css">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <!--jQuery library--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--Latest compiled and minified JavaScript--> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href="css/style.css">    
+    <link rel='stylesheet' type='text/css' href="css/style2.css">    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
+    <script src="js/metadata.js"></script>
+    <script src="js/files.js"></script>
 </head>
 <body>
-<form id="frmpaper" action="showpaper.html" method="get">
+
+<!--form to send file name to view-->
+<form id="openPaper" action="showpaper.html" method="get">
     <input type="text" name="urls" style="display:none;"/>
+    <input type="text" name="dir" style="display:none;"/>
 </form>
+
+<!--header here-->
 <div id="header">
-    <a onclick="location.reload()" href="#"><img src="logo.png" id="logo" /></a>
-</div>
-<div id="querybox">
-    <input type="text" id="searchbox" placeholder="Type the name of the course here" />
-    <button type="button" id="btnsearch" onclick="dosearch(0)">Search</button>
-    <br/>
-    <a id="showall" href="#" onclick="dosearch(1)">View All Question Papers</a>
-</div>
-<div id="recentbox">
-</div>
-<div id="resultbox">
+    <a onclick="location.reload(true)" href="#">
+    <img src="logo.png" id="logo" /></a>
 </div>
 
-<div id="contributers">
-    <button type="button" name="button" onclick="showresult()">click here for the list of people who maintain this website.</button>
+<!--navbar-->
+<div class="navbar navbar-inverse">
+    <div class=""row">
+        <div class="col-md-7 col-md-offset-3">  
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="mailto:anubhavp28@gmail.com?subject=FOSC PAPERVAULT &body=Kindly use these papers";><span class="glyphicon glyphicon-open"></span> Upload papers</a></li>  
+                <li class="nav-btn text-auxilary hidden-sm hidden-xs">got any papers? </li>  
+            </ul>    
+        </div>
+    </div>
 </div>
-<div id="contributer-result" class="not-active">
-  <ul style="list-style: none;">
-    <li><a href="https://github.com/anubhavp28" target="_blank">Anubhav Patel</i></a></li>
-    <li><a href="https://github.com/zeus0789" target="_blank">Abhishek Tiwari</i></a></li>
-  </ul>
+
+<!--contents start here-->
+<div class="container">
+    <!--searchbar-->
+    <div class="row">
+        <div id="querybox" href="#">
+            <div class="form-group">
+                <div class="col-md-8 col-md-offset-2 qbox inner-addon right-addon">
+                    <input id="search" class="form-control ellipse-box" placeholder="Type course namem course id eg. cs101" maxlength="16" type="text"/>
+                    <div id="searchbtn" onclick="doSearch(year=0, kind ='')"><a href="#"><i class = "glyphicon glyphicon-search"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--filter radio btns-->
+    <div class="row">
+        <div class="col-md-8 col-md-offset-3">           
+            <div id="filter" class="form-group">
+                <span class="text-auxilary-fade hidden-xs hidden-sm">search filters: &nbsp &nbsp &nbsp</span>
+                <label class="radio-inline"><input value="" type="radio" onclick="doSearch(year=0, kind ='')" name="optradio" checked>All</label>
+                <label class="radio-inline"><input value='mid' type="radio" onclick="doSearch(year=0, kind ='mid')" name="optradio">Midsem</label>
+                <label class="radio-inline"><input value='end' type="radio" onclick="doSearch(year=0, kind ='end')" name="optradio">Endsem</label> 
+                <label class="radio-inline"><input value='clt'type="radio" onclick="doSearch(year=0, kind ='clt')" name="optradio">classtest</label>                   
+            </div>
+        </div>
+    </div>
+
+    <!--search reutrn info-->
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-offset-3">
+            <div id="searchinfo">
+                <!--information about the search inserted here-->
+            </div>
+        </div>
+    </div>
+
+    <!--year wise collapsables-->
+    <div class="panel-group col-md-10 col-md-offset-1" id="yearGroup">
+        <div class="panel panel-default">            
+            <a data-toggle="collapse" data-parent="#yearGroup" href="#collapse1">
+                <div class="panel-heading">
+                <h2 class="panel-title">
+                        <span>1st Year Question Papers</span>
+                        <span id="collapse1Count" class="text-auxilary to-right">(0)</span>
+                    
+                </h2>
+                </div>
+            </a>
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div id="searchResults_1" class="panel-body">
+                    <!--search result be inserted here-->                                  
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <a data-toggle="collapse" data-parent="#yearGroup" href="#collapse2">
+                <div class="panel-heading">
+                <h2 class="panel-title">
+                        <span>2nd Year Question Papers</span>
+                        <span id="collapse2Count" class="text-auxilary to-right">(0)</span>
+                    
+                </h2>
+                </div>
+            </a>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div id="searchResults_2" class="panel-body">
+                    <!--search result be inserted here-->                                  
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <a data-toggle="collapse" data-parent="#yearGroup" href="#collapse3">
+                <div class="panel-heading">
+                <h2 class="panel-title">
+                        <span>3rd Year Question Papers</span>
+                        <span id="collapse3Count" class="text-auxilary to-right">(0)</span>
+                    
+                </h2>
+                </div>
+            </a>
+            <div id="collapse3" class="panel-collapse collapse">
+                <div id="searchResults_3" class="panel-body">
+                    <!--search result be inserted here-->                                  
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <a data-toggle="collapse" data-parent="#yearGroup" href="#collapse4">
+                <div class="panel-heading">
+                <h2 class="panel-title">
+                        <span>4th Year Question Papers</span>
+                        <span id="collapse4Count" class="text-auxilary to-right">(0)</span>
+                    
+                </h2>
+                </div>
+            </a>
+            <div id="collapse4" class="panel-collapse collapse">
+                <div id="searchResults_4" class="panel-body">
+                    <!--search result be inserted here-->                                  
+                </div>
+            </div>
+        </div>
+    </div> 
 </div>
+
+
+
+
 
 <div class="foot">
     <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-github fa-2x"></i></a></p>
     <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-facebook fa-2x"></i></a></p>
     <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-slack fa-2x"></i></a></p>
     <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-medium fa-2x"></i></a></p>
-    <p style="display: block; padding:0;">&copy; by IIITKalyaniFOSC. </p>
+    <p style="display: block; padding:0;">&copy; IIITKalyaniFOSC. </p>
 </div>
 </body>
 </html>
