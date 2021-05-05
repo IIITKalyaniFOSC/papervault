@@ -1,47 +1,130 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' type='text/css' href="css/style.css">
-    <script src="js/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PaperVault</title>
 </head>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/grid.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+  integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+
 <body>
-<form id="frmpaper" action="showpaper.html" method="get">
-    <input type="text" name="urls" style="display:none;"/>
-</form>
-<div id="header">
-    <a onclick="location.reload()" href="#"><img src="logo.png" id="logo" /></a>
-</div>
-<div id="querybox">
-    <input type="text" id="searchbox" placeholder="Type the name of the course here" />
-    <button type="button" id="btnsearch" onclick="dosearch(0)">Search</button>
-    <br/>
-    <a id="showall" href="#" onclick="dosearch(1)">View All Question Papers</a>
-</div>
-<div id="recentbox">
-</div>
-<div id="resultbox">
-</div>
+  <!-- Header starts here -->
 
-<div id="contributers">
-    <button type="button" name="button" onclick="showresult()">click here for the list of people who maintain this website.</button>
-</div>
-<div id="contributer-result" class="not-active">
-  <ul style="list-style: none;">
-    <li><a href="https://github.com/anubhavp28" target="_blank">Anubhav Patel</i></a></li>
-    <li><a href="https://github.com/zeus0789" target="_blank">Abhishek Tiwari</i></a></li>
+  <header class="header">
+    <nav class="main__navbar">
+      <h1 id="logo">PaperVault</h1>
+      <div class="openMenu"><i class="fa fa-bars"></i></div>
+
+      <ul class="mainMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="request.html">Request Section</a></li>
+        <div class="closeMenu"><i class="fa fa-times"></i></div>
+        <span class="icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-github"></i>
+        </span>
+      </ul>
+    </nav>
+
+    <section>
+      <div class="hero">
+        <img src="images/photo10.jpg" alt="photo" style="object-fit: cover" />
+        <h1 class="headline">All resources,<br> In One place.</h1>
+      </div>
+    </section>
+  </header>
+
+  <div class="slider"></div>
+
+  <!-- header ends here -->
+
+  <!-- Grid section start -->
+  <div style="height: 70px;"></div>
+  <div class="container" style="text-align: center; margin-bottom: 50px;">
+    <h1>Select Your Semester</h1>
+    <h5>Practice previous year papers and ace you preparations</h5>
+  </div>
+
+  <ul class="honeycomb" lang="es">
+    <li class="honeycomb-cell" onclick="location.href ='sem/sem1.html'">
+      <img class="honeycomb-cell__image" src="images/gridblack.jpg" onclick="location.href ='sem/sem1.html'" />
+      <p class="bttn">Semester 1</p>
+    </li>
+    <li class="honeycomb-cell" onclick="location.href ='#'">
+      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
+      <p class="bttn">Semester 2</p>
+    </li>
+    <li class="honeycomb-cell" onclick="location.href ='#'">
+      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
+      <p class="bttn">Semester 3</p>
+    </li>
+    <li class="honeycomb-cell" onclick="location.href ='#'">
+      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
+      <p class="bttn">Semester 4</p>
+    </li>
+    <li class="honeycomb-cell" onclick="location.href ='#'">
+      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
+      <p class="bttn">Semester 5</p>
+    </li>
+    <li class="honeycomb-cell" onclick="location.href ='#'">
+      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
+      <p class="bttn">Semester 6</p>
+    </li>
+    <li class="honeycomb-cell" onclick="location.href ='#'">
+      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
+      <p class="bttn">Semester 7</p>
+    </li>
+    <li class="honeycomb-cell honeycomb__placeholder"></li>
+    <li class="honeycomb-cell">
+      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
+      <p class="bttn">Semester 8</p>
+    </li>
+    <li class="honeycomb-cell honeycomb__placeholder"></li>
   </ul>
-</div>
+  <div style="height: 100px"></div>
 
-<div class="foot">
-    <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-github fa-2x"></i></a></p>
-    <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-facebook fa-2x"></i></a></p>
-    <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-slack fa-2x"></i></a></p>
-    <p><a href="https://github.com/IIITKalyaniFOSC"><i class="fab fa-medium fa-2x"></i></a></p>
-    <p style="display: block; padding:0;">&copy; by IIITKalyaniFOSC. </p>
-</div>
+  <!-- Grid section ends here -->
+
+  <!-- footer section starts here -->
+
+  <footer>
+    <div class="footer-icons">
+      <a href="https://github.com/IIITKalyaniFOSC" class="github-link"><i class="fab fa-github"></i></a>
+      <a href="#" class="facebook-link"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="twitter-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="instagram-link"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="footer-text">
+      Developed by Mislah, Suryansh, Yashraj and Vishal
+    </div>
+    <div class="footer-text">(IIIT Kalyani Batch: 2020-24)</div>
+    <div class="footer-copyright">© Copyright by IIITKalyaniFOSC</div>
+  </footer>
+
+  <!-- footer section ends here -->
+
+  <!-- including scripts here -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+    integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+    integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+    crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
