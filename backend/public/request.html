@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Roommate Application Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/req-page.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="images/logodark.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+          />
+          Return Home
+        </a>
+      </nav>
+      <div class="container">
+    <div class="testbox">
+        
+      <form action="/submit-request" method="POST">
+        <div class="banner">
+            <h1 style="margin: 15px;">
+                Didn't find what you needed? <br />
+                Create a request, We'll try and provide you with resources ASAP
+              </h1>
+        </div>
+        <div class="contact-item">
+          <div class="item">
+            <p>Email</p>
+            <input type="text" name="email"/>
+          </div>
+        </div>
+      
+        <div class="item">
+          <p>Your Request</p>
+          <textarea rows="8" name="txtAreaInput" required></textarea>
+        </div>
+        
+        <div class="btn-block">
+          <button type="submit" href="/">APPLY</button>
+        </div>
+      </form>
+    </div>
+</div>
+  </body>
+</html>
