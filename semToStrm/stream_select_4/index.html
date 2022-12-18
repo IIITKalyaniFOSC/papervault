@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet" />
+    <title>Select stream</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="resources/ppv-favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="resources/ppv-favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="resources/ppv-favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="resources/ppv-favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="resources/ppv-favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="resources/ppv-favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="resources/ppv-favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="resources/ppv-favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="resources/ppv-favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="resources/ppv-favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="resources/ppv-favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="resources/ppv-favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="resources/ppv-favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="resources/ppv-favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <style>
+      .wrapper .side::before {
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.6979166666666667) 0%,
+          rgba(0, 0, 0, 0.2721463585434174) 100%
+        );
+      }
+      .wrapper .left:hover .image,
+      .wrapper .right:hover .image {
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body
+    style="
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 3rem;
+    "
+  >
+    <div class="wrapper md:flex">
+      <div
+        class="side left w-full h-[50vh] relative overflow-hidden flex items-center justify-center before:content-[''] before:w-full before:h-full before:top-0 before:left-0 before:z-[1] before:block before:absolute md:w-1/2 md:h-screen cursor-pointer"
+        onclick="location.href ='../../sem_cse/sm4.html'"
+      >
+        <div
+          style="background-image: url('resources/cse.jpg')"
+          class="image dog w-full h-full bg-cover bg-center absolute top-0 left-0 transition-all"
+        ></div>
+        <div style="color: #fff" class="caption relative z-10 text-center">
+          <h1 class="uppercase tracking-[0.25em] mb-4">CSE</h1>
+          <!-- <a class="button" href="#">See our dogs</a> -->
+        </div>
+      </div>
+
+      <div
+        class="side right w-full h-[50vh] relative overflow-hidden flex items-center justify-center before:content-[''] before:w-full before:h-full before:top-0 before:left-0 before:z-[1] before:block before:absolute md:w-1/2 md:h-screen cursor-pointer"
+        onclick="location.href ='../../sem_ece/sm4.html'"
+      >
+        <div
+          style="background-image: url('resources/ece.jpg')"
+          class="image cat w-full h-full bg-cover bg-center absolute top-0 left-0 transition-all"
+        ></div>
+        <div style="color: #fff" class="caption relative z-10 text-center">
+          <h1 class="uppercase tracking-[0.25em] mb-4">ECE</h1>
+          <!-- <a class="button" href="#">See our cats</a> -->
+        </div>
+      </div>
+      <div
+        class="streamtext z-50 flex items-center justify-center absolute top-1/2 right-1/2"
+      >
+        <div
+          class="circle h-32 w-32 rounded-full bg-white text-black flex items-center justify-center text-4xl absolute"
+        >
+          <div class="circle_text">OR</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

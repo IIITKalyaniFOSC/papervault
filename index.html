@@ -1,130 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PaperVault</title>
-</head>
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/grid.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-  integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
-
-<body>
-  <!-- Header starts here -->
-
-  <header class="header">
-    <nav class="main__navbar">
-      <h1 id="logo">PaperVault</h1>
-      <div class="openMenu"><i class="fa fa-bars"></i></div>
-
-      <ul class="mainMenu">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="request.html">Request Section</a></li>
-        <div class="closeMenu"><i class="fa fa-times"></i></div>
-        <span class="icons">
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-github"></i>
-        </span>
-      </ul>
-    </nav>
-
-    <section>
-      <div class="hero">
-        <img src="images/photo10.jpg" alt="photo" style="object-fit: cover" />
-        <h1 class="headline">All resources,<br> In One place.</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="grid.css" />
+    <link rel="stylesheet" href="output.css" />
+    <!-- favicon starts -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="resources/ppv-favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="resources/ppv-favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="resources/ppv-favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="resources/ppv-favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="resources/ppv-favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="resources/ppv-favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="resources/ppv-favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="resources/ppv-favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="resources/ppv-favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="resources/ppv-favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="resources/ppv-favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="resources/ppv-favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="resources/ppv-favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="resources/ppv-favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- favicon ends -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <title>PaperVault</title>
+  </head>
+  <body>
+    <div id="preloader"></div>
+    <!-- Showcase and navbar -->
+    <div id="page-1">
+      <section class="showcase">
+        <header>
+          <img src="resources/ppv_logo.png" alt="logo" class="logo" />
+          <!-- <h2 class="logo">PaperVault</h2> -->
+          <div class="toggle"></div>
+        </header>
+        <video
+          src="resources/video.mp4"
+          playsinline
+          muted
+          loop
+          autoplay
+        ></video>
+        <div class="overlay"></div>
+        <div class="text">
+          <h2>PaperVault</h2>
+          <h3>All your resources in one place</h3>
+          <a href="#page-2">Get Materials</a>
+        </div>
+      </section>
+      <div class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#page-2">Resource section</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
       </div>
-    </section>
-  </header>
-
-  <div class="slider"></div>
-
-  <!-- header ends here -->
-
-  <!-- Grid section start -->
-  <div style="height: 70px;"></div>
-  <div class="container" style="text-align: center; margin-bottom: 50px;">
-    <h1>Select Your Semester</h1>
-    <h5>Practice previous year papers and ace you preparations</h5>
-  </div>
-
-  <ul class="honeycomb" lang="es">
-    <li class="honeycomb-cell" onclick="location.href ='sem/sem1.html'">
-      <img class="honeycomb-cell__image" src="images/gridblack.jpg" onclick="location.href ='sem/sem1.html'" />
-      <p class="bttn">Semester 1</p>
-    </li>
-    <li class="honeycomb-cell" onclick="location.href ='#'">
-      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
-      <p class="bttn">Semester 2</p>
-    </li>
-    <li class="honeycomb-cell" onclick="location.href ='#'">
-      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
-      <p class="bttn">Semester 3</p>
-    </li>
-    <li class="honeycomb-cell" onclick="location.href ='#'">
-      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
-      <p class="bttn">Semester 4</p>
-    </li>
-    <li class="honeycomb-cell" onclick="location.href ='#'">
-      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
-      <p class="bttn">Semester 5</p>
-    </li>
-    <li class="honeycomb-cell" onclick="location.href ='#'">
-      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
-      <p class="bttn">Semester 6</p>
-    </li>
-    <li class="honeycomb-cell" onclick="location.href ='#'">
-      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
-      <p class="bttn">Semester 7</p>
-    </li>
-    <li class="honeycomb-cell honeycomb__placeholder"></li>
-    <li class="honeycomb-cell">
-      <img class="honeycomb-cell__image" src="images/gridblack.jpg" />
-      <p class="bttn">Semester 8</p>
-    </li>
-    <li class="honeycomb-cell honeycomb__placeholder"></li>
-  </ul>
-  <div style="height: 100px"></div>
-
-  <!-- Grid section ends here -->
-
-  <!-- footer section starts here -->
-
-  <footer>
-    <div class="footer-icons">
-      <a href="https://github.com/IIITKalyaniFOSC" class="github-link"><i class="fab fa-github"></i></a>
-      <a href="#" class="facebook-link"><i class="fab fa-facebook"></i></a>
-      <a href="#" class="twitter-link"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="instagram-link"><i class="fab fa-instagram"></i></a>
     </div>
-    <div class="footer-text">
-      Developed by Mislah, Suryansh, Yashraj and Vishal
+    <!-- Showcase and navbar end -->
+
+    <!-- Semester -->
+
+    <!-- Grid section start -->
+    <div id="page-2">
+      <!-- <div style="height: 70px"></div> -->
+      <div class="container1" style="text-align: center; margin-bottom: 50px">
+        <h1 style="font-weight: bold; font-size: 2.5rem">
+          Semester-wise Resources
+        </h1>
+        <!-- <h5>Practice previous year papers and ace you preparations</h5> -->
+      </div>
+
+      <ul class="honeycomb" lang="es">
+        <li
+          class="honeycomb-cell"
+          onclick="location.href ='semToStrm/stream_select_1/index.html'"
+        >
+          <img
+            class="honeycomb-cell__image"
+            src="resources/gridblack1.jpg"
+            onclick="location.href ='sem/sm1.html'"
+          />
+          <p class="bttn">Semester 1</p>
+        </li>
+        <li
+          class="honeycomb-cell"
+          onclick="location.href ='semToStrm/stream_select_2/index.html'"
+        >
+          <img class="honeycomb-cell__image" src="resources/gridblack1.jpg" />
+          <p class="bttn">Semester 2</p>
+        </li>
+        <li
+          class="honeycomb-cell"
+          onclick="location.href ='semToStrm/stream_select_3/index.html'"
+        >
+          <img class="honeycomb-cell__image" src="resources/gridblack1.jpg" />
+          <p class="bttn">Semester 3</p>
+        </li>
+        <li
+          class="honeycomb-cell"
+          onclick="location.href ='semToStrm/stream_select_4/index.html'"
+        >
+          <img class="honeycomb-cell__image" src="resources/gridblack1.jpg" />
+          <p class="bttn">Semester 4</p>
+        </li>
+        <li
+          class="honeycomb-cell"
+          onclick="location.href ='semToStrm/stream_select_5/index.html'"
+        >
+          <img class="honeycomb-cell__image" src="resources/gridblack1.jpg" />
+          <p class="bttn">Semester 5</p>
+        </li>
+        <li
+          class="honeycomb-cell"
+          onclick="location.href ='semToStrm/stream_select_6/index.html'"
+        >
+          <img class="honeycomb-cell__image" src="resources/gridblack1.jpg" />
+          <p class="bttn">Semester 6</p>
+        </li>
+        <li
+          class="honeycomb-cell"
+          onclick="location.href ='semToStrm/stream_select_7/index.html'"
+        >
+          <img class="honeycomb-cell__image" src="resources/gridblack1.jpg" />
+          <p class="bttn">Semester 7</p>
+        </li>
+        <li class="honeycomb-cell honeycomb__placeholder"></li>
+        <li
+          class="honeycomb-cell"
+          onclick="location.href ='semToStrm/stream_select_8/index.html'"
+        >
+          <img class="honeycomb-cell__image" src="resources/gridblack1.jpg" />
+          <p class="bttn">Semester 8</p>
+        </li>
+        <li class="honeycomb-cell honeycomb__placeholder"></li>
+      </ul>
+      <!-- <div style="height: 100px"></div> -->
     </div>
-    <div class="footer-text">(IIIT Kalyani Batch: 2020-24)</div>
-    <div class="footer-copyright">© Copyright by IIITKalyaniFOSC</div>
-  </footer>
 
-  <!-- footer section ends here -->
+    <!-- semester page ends here -->
 
-  <!-- including scripts here -->
+    <footer id="footer">
+      <div
+        style="background-color: #10182f"
+        class="grid grid-cols-1 gap-4 text-white py-14 px-20 xl:grid-cols-3 xl:px-40"
+      >
+        <div class="about">
+          <div class="logo flex justify-start xl:justify-start">
+            <img src="resources/ppv_logo.png" class="w-8 h-8" />
+            <h2 style="color: #2c8dca" class="text-3xl mb-6">PaperVault</h2>
+          </div>
+          <p style="color: #fff" class="text-xl mb-10">
+            PaperVault, a place for students to gear up their preparation
+            through previous year question paper and boost their confidence
+            using this space.
+          </p>
+        </div>
+        <div class="Made_By xl:flex flex-col items-center my-5 xl:my-0">
+          <div class="flex mb-5">
+            <div
+              style="
+                width: 2px;
+                height: 1.5rem;
+                background-color: #2c8dca;
+                margin-right: 1rem;
+              "
+              class="boxrec"
+            ></div>
+            <h1 class="font-bold text-2xl">Made with ❤️ by</h1>
+          </div>
+          <ul style="color: #4d5e71">
+            <li class="py-3 text-xl hover:text-white">
+              <a
+                href="https://www.linkedin.com/in/rishi-kumar-a29563107/"
+                target="_blank"
+                >Rishi Kumar</a
+              >
+            </li>
+            <li class="py-3 text-xl hover:text-white">
+              <a
+                href="https://www.linkedin.com/in/harsh-rawat-ba0a41231/"
+                target="_blank"
+                >Harsh Singh Rawat</a
+              >
+            </li>
+            <li class="py-3 text-xl hover:text-white">
+              <a
+                href="https://www.linkedin.com/in/maharshi-basu-480548229/"
+                target="_blank"
+                >Maharshi Basu</a
+              >
+            </li>
+            <li class="py-3 text-xl hover:text-white mb-5">
+              <a href="https://www.linkedin.com/in/g33tansh/" target="_blank"
+                >Geetansh Jangid</a
+              >
+            </li>
+          </ul>
+        </div>
 
+        <!-- ... -->
+        <div class="contact_us xl:flex flex-col items-center">
+          <div class="flex mb-6">
+            <div
+              style="
+                width: 2px;
+                height: 1.5rem;
+                background-color: #2c8dca;
+                margin-right: 1rem;
+              "
+              class="boxrec"
+            ></div>
+            <p class="font-bold text-2xl">Contact us on our socials</p>
+          </div>
+          <div class="socials mb-10">
+            <a href="https://twitter.com/FoscIiitk">
+              <i class="fa-brands fa-twitter fa-lg px-3"></i>
+            </a>
+            <!-- 
+            <a href="#">
+              <i class="fa-brands fa-facebook fa-lg px-3"></i>
+            </a> -->
+            <!-- <a href="#">
+              <i class="fa-brands fab fa-instagram fa-lg px-3"></i>
+            </a> -->
+            <a href="https://github.com/IIITKalyaniFOSC">
+              <i class="fa-brands fa-github fa-lg px-3"></i>
+            </a>
+          </div>
+        </div>
+        <h1>&#169;2022 FOSC IIIT Kalyani. All Right reserved</h1>
+      </div>
+    </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
-    integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
-    integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
-    crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>
-</body>
+    <!-- till here remove  -->
+    <!-- Scroll to top -->
+    <button class="scroll-to-top"><i class="fa fa-angle-up"></i></button>
 
+    <!-- the script for preloading animation goes here -->
+
+    <script src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/983aef8cba.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+#preloader {
+  /* display: none; */
+  background: #f5f7f6 url("../resources/preloader.gif") no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+body {
+  /* padding: 0; */
+  /* margin: 0; */
+  /* position: absolute; */
+  /* display: flex; */
+  flex-direction: column;
+  /* text-align: center; */
+  /* align-items: center; */
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  /* left: calc(35% - 300px); */
+  /* margin-top: 130px; */
+}
+
+a {
+  text-decoration: none;
+}
+.sm {
+  background-color: #fff;
+  height: 100vh;
+}
+.card-list {
+  /* position: absolute; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-start;
+  padding: 5rem;
+  /* margin-left: auto;
+  margin-right: auto; */
+  overflow-x: scroll;
+  /* margin: 0 50px; */
+  /* padding-left: 100px; */
+}
+
+.card-list::-webkit-scrollbar {
+  display: none;
+  width: 10px;
+  height: 10px;
+}
+.card-list::-webkit-scrollbar-thumb {
+  background: #201c29;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.card-list::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+
+.card {
+  height: 280px;
+  width: 200px;
+  min-width: 190px;
+  /* padding: 1.5rem; */
+  border-radius: 10px;
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s ease-out;
+  margin: 0;
+  scroll-snap-align: start;
+  clear: both;
+  position: relative;
+  left: 0;
+}
+
+/* .card:focus-within ~ .card, */
+.card:hover ~ .card {
+  /* transform: translateX(130px); */
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-1rem);
+  transition: 1s ease-out;
+}
+
+.card:not(:first-child) {
+  margin-left: -50px;
+}
+
+.card-header {
+  margin-bottom: auto;
+}
+
+.card-header h2 {
+  font-size: 20px;
+  margin: 0.25rem 0 auto;
+  text-decoration: none;
+  color: inherit;
+  border: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* lines */
+.emptybar {
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0, 154, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 154, 217, 1) 0%,
+    rgba(217, 147, 0, 1) 65%,
+    rgba(255, 186, 0, 1) 100%
+  );
+  transition: 0.6s ease-out;
+}
+
+.card:hover .filledbar {
+  width: 100%;
+  transition: 0.4s ease-out;
+}
+.bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
+}
+.title {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+@media screen and (min-width: 1200px) {
+  .card-list {
+    justify-content: center;
+  }
+}
+
+.btn {
+  /* display: inline-block; */
+  font-size: 1.3em;
+  background: #17141d;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  /* margin-top: 60px; */
+  color: #fff;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* cursor: pointer; */
+}
+
+.btn:hover {
+  background: #2a2b30;
+  color: #fff;
+}
